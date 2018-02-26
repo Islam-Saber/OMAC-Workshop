@@ -6,12 +6,13 @@ request = 0
 
 def atm (balance, request):
     request = int(input(["How much money do you need ?"]))
+    given = 0
 
     if request <= 0:
-        print("please check you answer!")
+        print("please enter a bigger value !")
 
     elif request > balance:
-        print("insufficient amount!")
+        print("insufficient balance !")
 
     else:
         for unit in valid_units:
@@ -19,6 +20,9 @@ def atm (balance, request):
              print("Give " + str(unit))
              request -= unit
              balance -= unit
+             given += unit
+
+    print(str(given) + " Given")
 
     print("Your balance is " + str(balance))
 
